@@ -1,0 +1,10 @@
+:root{
+    --primary: #fff;
+    --linear: linear-gradient(154.23deg, #0F3A7B -58.45%, #0CFFFF 374.49%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
