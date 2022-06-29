@@ -1,17 +1,20 @@
 const API_KEY = 'd727d54c8332440dd1380a50e879ce22'
 const API_LANGUAGE = 'pt-br'
-const BUTTON_PLAY = ''
+const BASE_URL_IMAGE = 'https:image.tmdb.org/t/p/original'
 
 const LIST_MOVIES = ['tt12801262', 'tt4823776' ,'tt2096673', 'tt5109280', 'tt7146812', 'tt2948372', 'tt2953050', 'tt3521164', 'tt2380307', 'tt8097030']
+
+const moviesList = document.getElementById('movies_list')
 
 function getUrlMovie(movieId){
     return `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&language=${API_LANGUAGE}`
 }
 
 //Script para inicializar os dados do filme principal
-fetch(getUrlMovie(LIST_MOVIES[0]))
-.then(response => response.json())
-.then(data => {
+function setMainMovie(movieId){
+    console.log('estou selecionando o filme', movieId)
+
+    fetch(getUrlMovie(movieId)).then(response => response.json()).then(data => {
     console.log(data)
     const app = document.getElementById('app')
 
@@ -27,15 +30,10 @@ fetch(getUrlMovie(LIST_MOVIES[0]))
     rating.innerHTML = data.vote_average
     info.innerHTML = yearRelease + ' - ' + data.genres[0].name + ' - Filme'
 
-    const image = `https:image.tmdb.org/t/p/original${data.backdrop_path}`
+    const image = BASE_URL_IMAGE.concat(data.backdrop_path)
     app.style.backgroundImage = `linear-gradient(90.18deg, rgb(13, 22, 46, 0.7) 23.21%, rgba(13, 22, 46, 0.0001) 96.69%), url('${image}')`
 })
-
-function setMainMovie(movieId){
-    console.log('estou selecionando o filme', movieId)
 }
-
-const moviesList = document.getElementById('movies_list')
 
 function createButtonMovie(movieId){
     const button = document.createElement('button')
@@ -51,7 +49,7 @@ function createMovie(movieId){
         const movie = document.createElement('li')
         const genre = `<span>${data.genres[0].name}</span>`
         const title = `<strong>${data.title}</strong>`
-        const image = `https:image.tmdb.org/t/p/original${data.backdrop_path}`
+        const image = BASE_URL_IMAGE.concat(data.backdrop_path)
 
         movie.innerHTML =  genre + title 
         movie.appendChild(createButtonMovie(movieId))
@@ -65,3 +63,5 @@ function loadListMovies(){
 }
 
 loadListMovies()
+
+setMainMovie(LIST_MOVIES[0])
