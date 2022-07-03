@@ -31,7 +31,7 @@ function setMainMovie(movieId){
     info.innerHTML = yearRelease + ' - ' + data.genres[0].name + ' - Filme'
 
     const image = BASE_URL_IMAGE.concat(data.backdrop_path)
-    app.style.backgroundImage = `linear-gradient(90.18deg, rgb(13, 22, 46, 0.7) 23.21%, rgba(13, 22, 46, 0.0001) 96.69%), url('${image}')`
+    // app.style.backgroundImage = `linear-gradient(90.18deg, rgb(13, 22, 46, 0.7) 23.21%, rgba(13, 22, 46, 0.0001) 96.69%), url('${image}')`
 })
 }
 
