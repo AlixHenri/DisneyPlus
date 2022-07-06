@@ -64,6 +64,12 @@ function loadListMovies(){
     LIST_MOVIES.map(createMovie)
 }
 
+function changeButtonMenu(){
+    const button = document.querySelector('.btnMenu')
+
+    button.classList.toggle('active')
+}
+
 loadListMovies()
 
 setMainMovie(LIST_MOVIES[0])

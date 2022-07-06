@@ -11,9 +11,10 @@ header{
     flex-direction: column;
     align-items: flex-end;
     width: 46px;
-    row-gap: 12px;
+    row-gap: 10px;
     background: transparent;
     border: none;
+    cursor: pointer;
 }
 
 .btnMenu span{
@@ -26,4 +27,8 @@ header{
 
 .btnMenu span:last-child{
     width: 45%;
+}
+
+.btnMenu.active span:last-child{
+    width: 100%;
 }
