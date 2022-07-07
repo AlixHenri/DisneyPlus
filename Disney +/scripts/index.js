@@ -12,10 +12,7 @@ function getUrlMovie(movieId){
     return `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&language=${API_LANGUAGE}`
 }
 
-//Script para inicializar os dados do filme principal
 function setMainMovie(movieId){
-    console.log('estou selecionando o filme', movieId)
-
     fetch(getUrlMovie(movieId)).then(response => response.json()).then(data => {
     console.log(data)
     const appImage = document.querySelector('.app_image img')
@@ -72,6 +69,7 @@ function changeButtonMenu(){
     navigation.classList.toggle('active')
 }
 
+//Script para inicializar os dados do filme principal
 loadListMovies()
 
 setMainMovie(LIST_MOVIES[0])
