@@ -53,3 +53,53 @@
 .movie button:hover{
     filter: brightness(0.9);
 }
+
+/* MEDIA QUERIES */
+@media(max-width: 768px){
+    .feature_movie h1{
+        font-size: 2.5rem;
+        line-height: 3.25rem;
+    }
+
+    .movie button{
+        width: 240px;
+        height: 60px;
+    }
+
+    .movie button img{
+        width: 16px;
+        height: auto;
+    }
+}
+
+@media(max-width: 650px){
+    .movie h1{
+        font-size: 3rem;
+        line-height: 2.5rem;
+    }
+
+    .movie{
+        row-gap: 8px;
+    }
+    .movie p{
+        font-size: 1rem;
+        line-height: 1.5rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 6;
+        line-clamp: 6;
+        -webkit-box-orient: vertical;
+    }
+
+    .movie button{
+        width: 175px;
+        height: 48px;
+        font-size: 0.875rem;
+        padding: 0 32px;
+    }
+
+    .movie button img{
+        width: 14px;
+    }
+}

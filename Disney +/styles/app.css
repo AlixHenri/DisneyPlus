@@ -41,3 +41,26 @@ main{
     margin-top: 48px;
     list-style: none;
 }
+
+/* MEDIA QUERIES */
+@media (max-width: 1000px){
+    #app{
+        padding: 40px;
+    }
+}
+
+@media (max-width: 768px){
+    #app{
+        padding: 24px;
+    }
+}
+
+@media (max-width: 650px){
+    #app{
+        padding: 16px;
+    }
+
+    .app_image::after{
+        background: linear-gradient(90.18deg, rgba(13, 22, 46, 0.7) 50%, rgba(13, 22, 46, 0.2) 96.69%);
+    }
+}
