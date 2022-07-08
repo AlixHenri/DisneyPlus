@@ -30,3 +30,25 @@
     font-weight: 700;
     cursor: pointer;
 }
+
+@media (max-width: 650px) {
+    .form{
+        flex-direction: column;
+        gap: 16px 0;
+    }
+
+    .form input,
+    .form button{
+        padding: 10px;
+        height: 40px
+    }
+
+    .form button{
+        width: 100%;
+        font-size: 0.875rem;
+    }
+
+    .form button::before{
+        content: 'Adicionar';
+    }
+}

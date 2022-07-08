@@ -21,13 +21,13 @@
 }
 
 /* MEDIA QUERIES */
-@media (max-height: 768px) {
+@media (max-height: 750px) {
     .navigation{
         padding: 70px 40px 40px;
     }
 }
 
-@media(max-width: 768px){
+@media (max-width: 768px) {
     .navigation{
         width: 100vw;
         right: -100vw;
@@ -35,5 +35,12 @@
 
     .navigation.active{
         transform: translateX(-100vw);
+    }
+}
+
+@media (max-width: 650px) {
+    .navigation{
+        padding: 44px 24px 24px;
+        width: 100vw;
     }
 }
